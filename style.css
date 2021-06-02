@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background-color: #212121;
+}
+
+#sectionCadastro {
+    height: 550px;
+    margin: -4px;
+    background: url(./img/logo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#sectionCadastro>h1 {
+    font-size: 2rem;
+    padding: 30px 0px 61px 0px;
+    color: white;
+    text-align: center;
+}
+
+#sectionCliente {
+    width: 850px;
+    height: 350px;
+    position: relative;
+    background: url(./img/carro.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #212121;
+    opacity: 0.9;
+    margin: auto;
+    border-radius: 200px 200px 200px 200px;
+    color: #ffffff;
+}
+
+#sectionCliente>div {
+    padding: 70px 80px 50px 200px;
+}
+
+#sectionCliente input {
+    display: block;
+    width: 500px;
+    height: 50px;
+    border-radius: 100px;
+    border: 2px solid black;
+    margin: 10px 0px 10px 0px;
+    outline: none;
+    padding-left: 20px;
+}
+
+#sectionCliente input:nth-child(4) {
+    width: 200px;
+}
+
+/* FORMATAÇÃO DO MAIN */
+
+main {
+    max-width: 1100px;
+    color: white;
+    margin: 30px auto;
+    border-radius: 25px 25px 25px 25px;
+    background-color: #484848;
+}
+
+td {
+    border: 1px solid white;
+    border-radius: 25px 0px 0px 25px;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0px 15px 0px 15px;
+    height: 50px;
+}
+
+thead>tr {
+    font-size: 1.2rem;
+}
+
+#tbody td:nth-child(n+2):nth-child(-n+3) {
+    border-radius: 0px;
+}
+
+#tbody td:nth-child(4) {
+    border-radius: 25px 25px 25px 25px;
+}
+
+#tbody td:nth-child(5) {
+    border: 0px;
+    border-radius: 0px;
+}
+
+.table {
+    width: 1000px;
+    user-select: none;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 0px 15px;
+}
+
+/* FORMATAÇÃO MODAL */
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000090;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -10;
+    opacity: 0;
+    user-select: none;
+    transition: all .3s;
+}
+
+.modal.active {
+    z-index: 5000;
+    opacity: 1;
+}
+
+.modal_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50vw;
+    margin: 15vh auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 2px black;
+}
+
+.modal_footer {
+    text-align: right;
+    height: 100px;
+    gap: 20px;
+    border-top: 1px solid #DDDDDD;
+    border-radius: 0 0 5px 5px;
+    padding: 0 20px;
+    background-color: inherit;
+}
+
+
+.modal_header {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid #DDDDDD;
+    border-radius: 5px 5px 0 0;
+    background-color: inherit;
+}
+
+.modal_header>h1 {
+    margin: 0 auto;
+    color: black;
+    font-weight: normal;
+    text-shadow: 0px 0px 1px grey;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.input_field {
+    width: calc(75% - 10px);
+    height: 40px;
+    padding: 0 14px;
+    font-size: 16px;
+    border-radius: 3px;
+    border-style: none;
+    outline-style: none;
+    border: 1px solid #DDDDDD
+}
+
+.input_field:focus {
+    border: 2px solid #1fb6ff;
+}
+
+/* FORMATAÇÃO FORM */
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.formInput {
+    width: 40%;
+    margin: auto;
+}
+
+.input_container {
+    position: relative;
+}
+
+.input {
+    border: 0;
+    border-bottom: 2px solid #9e9e9e;
+    outline: none;
+    transition: .2s ease-in-out;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+.label {
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #616161;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    font-size: 1rem;
+    cursor: text;
+    transition: .2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.input_finalizado {
+    pointer-events: none;
+    margin-top: 40px
+}
+
+.input, .label {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.input:valid, .input:focus {
+    border-bottom: 2px solid #26a69a;
+}
+
+.input:valid+.label, .input:focus+.label {
+    color: #26a69a;
+    font-size: .8rem;
+    top: -30px;
+}
+
+.margin-top-input {
+    margin-top: 2rem;
+}
+
+.disabledInput {
+    pointer-events: none;
+}
+
+/* FORMATAÇÃO DOS BUTTONS */
+
+.fechar_button {
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    line-height: 40px;
+    color: lightslategray;
+}
+
+.fechar_button:hover {
+    background-color: #ff4949;
+    cursor: pointer;
+    color: wheat;
+    border-radius: 0 5px 0 0;
+}
+
+.buttonVerde {
+    background-color: #1d8f01;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+}
+
+.buttonVerde:hover {
+    background-color: #023106;
+    color: #ffffff;
+    text-decoration: solid;
+    border: #91CB82 3px solid;
+    cursor: pointer;
+    
+}
+
+.buttonAmarelo {
+    background: #b6d40b;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+}
+
+.buttonAmarelo:hover {
+    background-color: #97b108;
+    color: #ffffff;
+    cursor: pointer;
+    border: #b6d40b;
+}
+
+.buttonExcluir {
+    background: #b90707;
+    width: 90px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.buttonExcluir:hover{
+    background-color: #800303;
+    color: #ffffff;
+    cursor: pointer;
+    border: #ff0202;
+}
+
+@media (max-width: 480px) {
+    .input-field {
+        width: 100%;
+    }
+}
+
+@media (max-width:480px) {
+    .modal-content {
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Parking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="sortcut icon" href="./img/logo.jpg" type="image/jpg">
+</head>
+    <body>
+        <section id="sectionCadastro">
+            <h1>Sistema Fast Parking</h1>
+            <section id="sectionCliente">
+                <div>
+                    <form class="formCadastro">
+                        <label for="nome">Nome</label>
+                        <input maxlength="30" id="nome" data-index="" type="text" placeholder="Pedro Lino de Lima" required />
+                        <label for="placaDoCarro">Placa do carro</label>
+                        <input id="placaDoCarro" onkeypress="mask(this, MercoSulMaskBehavior);" maxlength="8" placeholder="OUT-2003" type="text" required />
+                    </form>
+                    <footer>
+                        <button id="buttonAdicionar" class="buttonVerde">ADICIONAR</button>
+                        <button type="button" id="buttonPreco" class="buttonAmarelo">PREÇOS</button>
+                    </footer>
+                </div>
+            </section>
+        </section>
+        <main>
+            <table class="table" id="tabelaClientes">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Placa</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+    
+    
+                </tbody>
+            </table>
+        </main>
+
+        <div class="modal" id="modalComprovanteEntrada">
+            <div class="modal_content">
+                <header class="modal_header">
+                    <h1 class="tituloModal">Imprimir comprovante de entrada</h1>
+                    <span class="fechar_button" id="fecharComprovanteEntrada">&#10006;</span>
+                </header>
+                <form class="formInput">
+                    <div class="input_container">
+                        <input id="nomeComprovanteEntrada" data-index="" class="input_finalizado" type="text"/>
+                        <label class="label_finalizado margin-top-input" for="nomeComprovanteEntrada">Nome</label>
+                    </div>
+                    <div class="input_container">
+                        <input id="placaComprovanteEntrada" class="input_finalizado" type="text" />
+                        <label class="label_finalizado" for="placaComprovanteEntrada">Placa do carro</label>
+                    </div>
+                    <div class="input_container">
+                        <input id="dataComprovanteEntrada" class="input_finalizado" type="text" />
+                        <label class="label_finalizado" for="dataComprovanteEntrada">Data</label>
+                    </div>
+                    <div class="input_container">
+                        <input id="horaComprovanteEntrada" class="input_finalizado" type="text" />
+                        <label class="label_finalizado" for="horaComprovanteEntrada">Hora</label>
+                    </div>
+                </form>
+                <footer class="modal_footer">
+                    <button type="submit" class="buttonAmarelo" id="fecharModal">Fechar</button>
+                    <button type="submit" class="buttonVerde" id="buttonImprimirComprovanteEntrada">IMPRIMIR</button>
+                    <button type="button" class="buttonExcluir" id="cancelarComprovanteEntrada">APAGAR</button>
+                </footer>
+            </div>
+        </div>
+        <div class="modal" id="modalPreco">
+            <div class="modal_content">
+                <header class="modal_header">
+                    <h1 class="tituloModal">Preços</h1>
+                    <span class="fechar_button" id="close">&#10006;</span>
+                </header>
+                <form class="form">
+                    <label for="umaHoraPreco">Até 1 hora estacionado</label>
+                    <input class="input_field" data-index="" type="text" id="umaHoraPreco" placeholder="Até 1 hora" required/>
+                    <label for="precoAteUmaHora"> Após 1 Hora </label>
+                    <input class="input_field" type="text" id="precoAteUmaHora" placeholder="Demais horas" required/>
+                </form>
+                <footer class="modal_footer">
+                    <button type="submit" class="buttonVerde" id="salvarPreco">SALVAR</button>
+                    <button type="button" class="buttonExcluir" id="cancelar">CANCELAR</button>
+                </footer>
+            </div>
+        </div>
+        <div class="modal" id="modalEditar">
+            <div class="modal_content">
+                <header class="modal_header">
+                    <h1 class="tituloModal">Editar Dados</h1>
+                    <span class="fechar_button" id="closeEditar">&#10006;</span>
+                </header>
+                <form class="formInput">
+                    <div class="input_container">
+                        <input id="nomeEditar" data-index="" class="input" type="text" required />
+                        <label class="label margin-top-input" for="nomeEditar">Nome</label>
+                    </div>
+                    <div class="input_container">
+                        <input id="placaEditar" class="input" type="text" required />
+                        <label class="label_finalizado" for="placaEditar">Placa do carro</label>
+                    </div>
+                    <div class="input-container">
+                        <input id="dataEditar" class="input" type="text" required />
+                        <label class="label_finalizado" for="dataEditar">Data</label>
+                    </div>
+                    <div class="input-container">
+                        <input id="horaEditar" class="input" type="text" required />
+                        <label class="label_finalizado" for="horaEditar">Hora</label>
+                    </div>
+                </form>
+                <footer class="modal-footer">
+                    <button type="submit" class="buttonVerde" id="buttonAtualizarCliente">SALVAR ALTERAÇÕES</button>
+                    <button type="button" class="buttonExcluir" id="cancelarEditarDados">CANCELAR</button>
+                </footer>
+            </div>
+        </div>
+        <div class="modal" id="modalComprovante">
+            <div class="modal_content">
+                <header class="modal_header">
+                    <h1 class="tituloModal">Imprimir comprovante para pagamento</h1>
+                    <span class="fechar_button" id="closeComprovante">&#10006;</span>
+                </header>
+                <form class="formInput">
+                    <div class="input_container">
+                        <input id="nomeComprovante" data-index="" class="input disabledInput" type="text" />
+                        <label class="label disabledInput margin-top-input" for="nomeComprovante">Nome</label>
+                    </div>
+                    <div class="input_container">
+                        <input id="placaComprovante" class="input_finalizado" type="text"/>
+                        <label class="label_finalizado" for="placaComprovante">Placa do carro</label>
+                    </div>
+                    <div class="input_container">
+                        <input id="dataComprovante" class="input_finalizado" type="text"/>
+                        <label class="label_finalizado" for="dataComprovante">Data</label>
+                    </div>
+                    <div class="input_container">
+                        <input id="horaComprovante" class="input_finalizado" type="text" />
+                        <label class="label_finalizado" for="horaComprovante">Hora</label>
+                    </div>
+                    <div class="input_container">
+                        <input id="valorPagar" class="input_finalizado" type="text" />
+                        <label class="label_finalizado" for="valorPagar">Valor</label>
+                    </div>
+                </form>
+                <footer class="modal_footer">
+                    <button type="submit" class="buttonVerde" id="buttonImprimirComprovante">IMPRIMIR</button>
+                    <button type="button" class="buttonExcluir" id="cancelarComprovamte">CANCELAR</button>
+                </footer>
+            </div>
+        </div>
+        <script src = "main.js"></script>
+</body>
+</html>
