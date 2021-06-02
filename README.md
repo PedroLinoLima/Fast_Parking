@@ -1,5 +1,4 @@
-<h1 align= "center">Estacionamento - Fast Parking</h1> <img src="https://cdn.pixabay.com/photo/2016/02/24/17/26/garage-1220347_960_720.jpg" width="200px" heigth="200px">
-
+<img src="https://cdn.pixabay.com/photo/2016/02/24/17/26/garage-1220347_960_720.jpg" width="200px" heigth="200px"> <h1 align= "center">Estacionamento - Fast Parking</h1>
 <img src="https://cdn.pixabay.com/photo/2016/02/24/17/26/garage-1220347_960_720.jpg" width="100%" heigth="400px">
 
 <p align="justify">Projeto Estacionamento Fast Paking  - Neste projeto aplicado pelo professor Fernando Leonid do SENAI Jandira os alunos deveriam criar um sistemas para um estacionamento, o programa deveria cadastrar clientes que iriam fazer uso do local, marcando o nome, placa do veiculo, data e hora de chegada e saída, e por fim gerando comprovantes do horário de chegada e de saída e de pagamento.</p>
