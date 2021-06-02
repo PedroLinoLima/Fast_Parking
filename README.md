@@ -1,4 +1,4 @@
-<h1 align= "center">Estacionamento - Fast Parking</h1>
+<h1 align= "center">Estacionamento - Fast Parking</h1> <img src="https://cdn.pixabay.com/photo/2016/02/24/17/26/garage-1220347_960_720.jpg" width="200px" heigth="200px">
 
 <img src="https://cdn.pixabay.com/photo/2016/02/24/17/26/garage-1220347_960_720.jpg" width="100%" heigth="400px">
 
